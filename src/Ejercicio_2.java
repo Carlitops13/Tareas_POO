@@ -1,4 +1,4 @@
-import java.nio.channels.FileChannel;
+
 import java.util.Scanner;
 
 class registroClientes {
