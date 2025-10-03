@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Ejercicio_1{
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
-        productoPlastico[] almacen = new productoPlastico[5];
+        productoPlastico[] almacen = new productoPlastico[4];
         System.out.println("Registro de Productos de plástico");
 
          for  (int i = 0; i < almacen.length; i++) {
