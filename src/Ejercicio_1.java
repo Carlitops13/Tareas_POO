@@ -38,7 +38,7 @@ public class Ejercicio_1{
              valorTotal+= producto.precioStock();
          }
          System.out.println("\n--- El valor total de stock de  los productos es: "+ valorTotal);
-         System.out.println("Inventario");
+         System.out.println("Inventario");//Fin del programa
 
     }
 }
