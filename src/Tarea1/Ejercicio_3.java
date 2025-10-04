@@ -1,3 +1,5 @@
+package Tarea1;
+
 import java.util.Scanner;
 
 class Postulante {
@@ -25,7 +27,7 @@ class Postulante {
 
 
     public void MostrarDatos() {
-        System.out.println("--- Ficha del Postulante ---");
+        System.out.println("--- Ficha del Tarea1.Postulante ---");
         System.out.println("Nombres: " + this.nombre);
         System.out.println("Apellidos: " + this.apellido);
         System.out.println("Edad: " + this.edad);
@@ -45,7 +47,7 @@ public class Ejercicio_3 {
 
 
         for (int i = 0; i < postulantes.length; i++) {
-            System.out.println("\n--- Registrando Postulante N°: " + (i + 1) + " ---");
+            System.out.println("\n--- Registrando Tarea1.Postulante N°: " + (i + 1) + " ---");
 
             String nombre;
             String apellido;
@@ -91,7 +93,7 @@ public class Ejercicio_3 {
             lector.nextLine();
 
             postulantes[i] = new Postulante(nombre, apellido, edad, altura);
-            System.out.println("Postulante registrado con éxito!");
+            System.out.println("Tarea1.Postulante registrado con éxito!");
         }
         System.out.println("\n--- MOSTRANDO FICHAS DE POSTULANTES ---");
         for (Postulante p : postulantes) {

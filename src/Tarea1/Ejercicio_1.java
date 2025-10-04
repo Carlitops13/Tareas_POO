@@ -1,3 +1,5 @@
+package Tarea1;
+
 import java.util.Scanner;
  class productoPlastico{
     String nombre;
