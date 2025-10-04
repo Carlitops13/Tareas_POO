@@ -1,5 +1,5 @@
 <p align="left">
-  <img src="https://webhistorico.epn.edu.ec/wp-content/uploads/2022/08/logo-epn-vertical.png" alt="Logo de la Universidad" width="150">
+  <img src="https://hult-prize.s3.us-east-1.amazonaws.com/university/epn-white.png" alt="Logo de la Universidad" width="150">
 </p>
 # ☕ Tareas de Programación Orientada a Objetos 
 
