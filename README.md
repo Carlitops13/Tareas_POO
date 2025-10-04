@@ -1,3 +1,6 @@
+<p align="right">
+  <img src="https://memes.memedrop.io/production/P0L52k0D524y/source.gif" alt="Logo de la Universidad" width="150">
+</p>
 <p align="left">
   <img src="https://hult-prize.s3.us-east-1.amazonaws.com/university/epn-white.png" alt="Logo de la Universidad" width="150">
 </p>
