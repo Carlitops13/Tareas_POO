@@ -75,7 +75,7 @@ public class Ejercicio_3 {
             lector.nextLine();
 
             postulantes[i] = new Postulante(nombre, apellido, edad, altura);
-            System.out.println("Tarea1.Postulante registrado con éxito!");
+            System.out.println("Postulante registrado con éxito!");
         }
         System.out.println("\n--- MOSTRANDO FICHAS DE POSTULANTES ---");
         for (Postulante p : postulantes) {
