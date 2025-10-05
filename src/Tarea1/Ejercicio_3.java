@@ -7,16 +7,12 @@ class Postulante {
     String apellido;
     int edad;
     double estatura;
-
-
     Postulante(String nombre, String apellidos, int edad, double estatura) {
         this.nombre = nombre;
         this.apellido = apellidos;
         this.edad = edad;
         this.estatura = estatura;
     }
-
-
     public String obtenerEstado() {
         if (this.edad >= 18 && this.estatura >= 1.60) {
             return "Cumple con los requisitos";
@@ -24,8 +20,6 @@ class Postulante {
             return "No cumple con los requisitos";
         }
     }
-
-
     public void MostrarDatos() {
         System.out.println("--- Ficha del Tarea1.Postulante ---");
         System.out.println("Nombres: " + this.nombre);
@@ -39,34 +33,22 @@ class Postulante {
 public class Ejercicio_3 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
-
-
         Postulante[] postulantes = new Postulante[2];
-
         System.out.println("\n--- REGISTRO DE POSTULANTES ---");
-
-
         for (int i = 0; i < postulantes.length; i++) {
             System.out.println("\n--- Registrando Tarea1.Postulante N°: " + (i + 1) + " ---");
-
             String nombre;
             String apellido;
             int edad;
             double altura;
-
-
             do {
                 System.out.print("Ingrese su nombre: ");
                 nombre = lector.nextLine();
             } while (nombre.isEmpty());
-
-
             do {
                 System.out.print("Ingrese su apellido: ");
                 apellido = lector.nextLine();
             } while (apellido.isEmpty());
-
-
             do {
                 System.out.print("Ingrese su edad: ");
                 while (!lector.hasNextInt()) {
@@ -99,7 +81,6 @@ public class Ejercicio_3 {
         for (Postulante p : postulantes) {
             p.MostrarDatos();
         }
-
         lector.close();
     }
 }
