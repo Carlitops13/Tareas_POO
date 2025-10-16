@@ -1,4 +1,4 @@
-package Tarea4;
+package Tarea4.ejercicio1;
 
 public class Persona {
     private String nombre;
