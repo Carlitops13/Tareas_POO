@@ -14,8 +14,8 @@ public class Producto {
 
 
     public void setPrecio(double precio) {
-        if (precio > 0) { // La condición ahora busca lo que SÍ es válido
-            this.precio = precio; // Asigna el valor bueno
+        if (precio > 0) {
+            this.precio = precio;
         } else {
             System.out.println("Error: El precio debe ser un numero positivo");
         }
@@ -23,8 +23,8 @@ public class Producto {
 
 
     public void setNombre(String nombre) {
-        if (!nombre.equals("")) { // Condición para un nombre VÁLIDO
-            this.nombre = nombre; // Asigna el valor bueno
+        if (!nombre.equals("")) {
+            this.nombre = nombre;
         } else {
             System.out.println("Error: El nombre del producto está vacío");
         }
@@ -34,6 +34,6 @@ public class Producto {
     public void mostrar() {
         System.out.println("Nombre del producto: " + this.nombre);
         System.out.println("Precio del producto: " + this.precio);
-        System.out.println("--------------------"); // Separador para más claridad
+        System.out.println("--------------------");
     }
 }
