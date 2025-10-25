@@ -16,7 +16,7 @@ Aquí encontrarás las tareas desarrollados durante el curso de Programación Or
 | 🧩 Tarea | 📄 Descripción | 📂 Carpeta |
 |----------|----------------|------------|
 | **Tarea 1** | Conceptos básicos, utilización de la clase Scanner usando condicionales (3 ejercicios) | [`Tarea1`](src/Tarea1) |
-| **Tarea 2** | Conceptos básicos, utilización de la clase Scanner usando condicionales, ciclo for, while (4 ejercicios) | [`Tarea2`](src/Tarea2) |
+| **Tarea 2** | Conceptos básicos, utilización de la clase Scanner usando condicionales, ciclo for, while (4 ejercicios) | [`Tarea3`](src/Tarea2) |
 | **Tarea 3** | | [`Tarea2`](src/Tarea3) |
 
 > 📌 Cada carpeta contiene el código fuente (`.java`) y los archivos necesarios para ejecutar las tareas.
