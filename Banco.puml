@@ -1,0 +1,68 @@
+@startuml
+abstract class Banco.modelo.Persona {
+# String nombre
+# String cedula
+# String direccion
+# String telefono
++ void actualizarDatos(String,String)
++ {abstract}void mostrarRol()
++ String getNombre()
++ String getCedula()
+}
+
+
+class Banco.modelo.Cajero {
++ void mostrarRol()
++ void procesarDeposito(Cliente,double)
++ void procesarRetiro(Cliente,double)
+}
+
+abstract class Banco.modelo.Empleado {
+- String codigoEmpleado
++ boolean autenticarEmpleado(String,String)
++ void mostrarRol()
+}
+
+
+class Banco.excepciones.Operaciones {
+}
+class Banco.main.SistemaBancario {
++ {static} void main(String[])
++ {static} void menuCliente(Scanner,Cliente)
++ {static} void menuCajero(Scanner,Cajero,Cliente)
++ {static} void menuBalconServicios(Scanner,BalconServicios,Cliente)
++ {static} void menuJefeAgencia(Scanner,JefeAgencia,Cliente,Cajero)
+}
+
+class Banco.modelo.JefeAgencia {
++ void mostrarRol()
++ boolean aprobarPrestamo(Cliente,double)
++ void generarReporteOperaciones()
++ void evaluarEmpleado(Empleado)
+}
+
+class Banco.modelo.Cliente {
+- double saldoEnCuenta
++ void mostrarRol()
++ void registrarCuenta(String)
++ void verResumenFinanciero()
++ double getSaldoEnCuenta()
++ void setSaldoEnCuenta(double)
+}
+
+
+class Banco.modelo.BalconServicios {
++ void mostrarRol()
++ Cliente registrarNuevoCliente(String,String,String,String)
++ void actualizarDatosCliente(Cliente,String,String)
+}
+
+
+
+Banco.modelo.Empleado <|-- Banco.modelo.Cajero
+Banco.modelo.Persona <|-- Banco.modelo.Empleado
+Banco.excepciones.Exception <|-- Banco.excepciones.Operaciones
+Banco.modelo.Empleado <|-- Banco.modelo.JefeAgencia
+Banco.modelo.Persona <|-- Banco.modelo.Cliente
+Banco.modelo.Empleado <|-- Banco.modelo.BalconServicios
+@enduml
