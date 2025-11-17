@@ -32,7 +32,6 @@ public class Ejercicio2 {
                         break;
                     case 3:
                         System.out.println("Saliendo del programa...");
-                    case 4:
                         continuar= false;
                         System.out.println("Adios");
                         break;

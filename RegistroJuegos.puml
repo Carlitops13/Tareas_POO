@@ -1,0 +1,125 @@
+@startuml RegistroJuegos
+!define ABSTRACTCLASS abstract
+title Diagrama UML - Sistema de Registro de Juegos
+
+' Definición de colores
+skinparam classBackgroundColor #E1F5FF
+skinparam classBorderColor #0277BD
+skinparam classArrowColor #0277BD
+
+' Clase Abstracta Juego
+ABSTRACTCLASS Juego {
+    #{field} nombre: String
+    #{field} desarrollador: String
+    #{field} anioLanzamiento: int
+    #{field} calificacion: double
+    ---
+    +{abstract} obtenerDetalles(): String
+    +validarDatos(): void
+    +getNombre(): String
+    +getDesarrollador(): String
+    +getAnioLanzamiento(): int
+    +getCalificacion(): double
+    +setNombre(String): void
+    +setDesarrollador(String): void
+    +setAnioLanzamiento(int): void
+    +setCalificacion(double): void
+}
+
+' Clase MarioBros
+class MarioBros {
+    -{field} numeroMundos: int
+    -{field} tieneMultiplayer: boolean
+    -{field} plataforma: String
+    ---
+    +MarioBros(String, String, int, double, int, boolean, String)
+    +obtenerDetalles(): String
+    +getNumeroMundos(): int
+    +isTieneMultiplayer(): boolean
+    +getPlataforma(): String
+    +setNumeroMundos(int): void
+    +setTieneMultiplayer(boolean): void
+    +setPlataforma(String): void
+}
+
+' Clase CarreraVehiculos
+class CarreraVehiculos {
+    -{field} numeroCircuitos: int
+    -{field} tipoVehiculos: String
+    -{field} tieneIAadaptable: boolean
+    -{field} maxJugadores: int
+    ---
+    +CarreraVehiculos(String, String, int, double, int, String, boolean, int)
+    +obtenerDetalles(): String
+    +getNumeroCircuitos(): int
+    +getTipoVehiculos(): String
+    +isTieneIAadaptable(): boolean
+    +getMaxJugadores(): int
+    +setNumeroCircuitos(int): void
+    +setTipoVehiculos(String): void
+    +setTieneIAadaptable(boolean): void
+    +setMaxJugadores(int): void
+}
+
+' Excepción Personalizada
+class DatosInvalidosException {
+    +DatosInvalidosException(String)
+}
+
+' Clase Main (Controlador)
+class Main {
+    -{static} juegos: ArrayList<Juego>
+    -{static} scanner: Scanner
+    ---
+    +{static} main(String[]): void
+    -{static} mostrarMenu(): void
+    -{static} registrarMarioBros(): void
+    -{static} registrarCarreraVehiculos(): void
+    -{static} mostrarTodosJuegos(): void
+    -{static} buscarJuegoPorNombre(): void
+    -{static} filtrarPorTipo(): void
+    -{static} eliminarJuego(): void
+    -{static} mostrarEstadisticas(): void
+}
+
+' Relaciones de Herencia
+MarioBros --|> Juego : hereda
+CarreraVehiculos --|> Juego : hereda
+
+' Relaciones de Uso
+Main "1" ---> "*" Juego : gestiona
+Main ..> DatosInvalidosException : lanza
+Juego ..> DatosInvalidosException : lanza
+MarioBros ..> DatosInvalidosException : lanza
+CarreraVehiculos ..> DatosInvalidosException : lanza
+
+' Notas
+note right of Juego
+  Clase abstracta que define
+  la estructura base para todos
+  los juegos registrados.
+  Implementa validación de datos.
+end note
+
+note right of MarioBros
+  Especialización para juegos
+  de Mario Bros con atributos
+  específicos del género.
+end note
+
+note right of CarreraVehiculos
+  Especialización para juegos
+  de carreras con atributos
+  específicos del género.
+end note
+
+note right of Main
+  Controlador principal que
+  gestiona el menú interactivo
+  y el ArrayList de juegos.
+  Aplica polimorfismo al
+  mostrar detalles de juegos.
+end note
+
+@enduml
+

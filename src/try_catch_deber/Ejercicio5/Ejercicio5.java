@@ -6,7 +6,7 @@ public class Ejercicio5 {
     private static GestorProductos gestor = new GestorProductos();
     private static Scanner scanner = new Scanner(System.in);
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Gestor de Productos");
 
         while (true) {

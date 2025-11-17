@@ -4,21 +4,18 @@ import java.util.Scanner;
 
 public class Ejercicio4 {
   public static void validarPago(double monto) throws PagoInvalidoException {
-      if (monto <= 0) {
-          throw new PagoInvalidoException("El monto del pago debe ser mayor que cero.");
+      if (monto < 0) {
+          throw new PagoInvalidoException("Error: El pago no puede ser negativo.");
       }
       if (monto == 0) {
-          throw new PagoInvalidoException("El monto del pago no puede ser cero.");
-
+          throw new PagoInvalidoException("Error: El pago no puede ser igual a cero.");
       }
       if (monto > 5000) {
-          throw new PagoInvalidoException("El monto del pago excede el límite permitido.");
+          throw new PagoInvalidoException("Error: El pago no puede ser mayor a $5000.");
       }
-
-
   }
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Ingrese el monto del pago: ");

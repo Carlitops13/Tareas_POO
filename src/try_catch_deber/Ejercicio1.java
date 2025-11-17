@@ -3,7 +3,7 @@ package try_catch_deber;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el precio del producto: ");
         String input = scanner.nextLine();
@@ -28,4 +28,3 @@ public class Ejercicio1 {
         }
     }
 }
-

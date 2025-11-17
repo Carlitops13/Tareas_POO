@@ -8,7 +8,7 @@ private static final double IMPUESTO_IMPORTACION= 0.05;
 
     @Override
     public double calcularPrecioFinal() {
-        return 0;
+        return precioBase * (1 + IMPUESTO_IMPORTACION);
     }
     public String toString() {
         return String.format("Importado: Código: %s, Nombre: %s, Precio Base: %.2f (Impuesto de importación 5%%) - Precio Final: %.2f",
