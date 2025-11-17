@@ -1,0 +1,28 @@
+@startuml GestionPrecios
+title Diagrama UML - Gestion de Precios Inmobiliarios
+
+skinparam classBackgroundColor #E8F4F8
+skinparam classBorderColor #0288D1
+
+class GestionPrecios {
+    -{static} precios: ArrayList<Double>
+    -{static} scanner: Scanner
+    +{static} main(String[]): void
+    -{static} mostrarMenu(): void
+    -{static} obtenerOpcion(): int
+    -{static} ingresarPrecio(): void
+    -{static} mostrarPrecios(): void
+    -{static} precioMasAlto(): void
+    -{static} precioMasBajo(): void
+    -{static} precioIguales(): void
+    -{static} buscarPrecio(): void
+}
+
+note right of GestionPrecios
+    Clase principal que gestiona
+    precios de casas y departamentos
+    mediante un ArrayList<Double>
+end note
+
+@enduml
+

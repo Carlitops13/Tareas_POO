@@ -1,0 +1,96 @@
+@startuml SistemaOlimpiadas
+title Diagrama UML - Sistema de Registro de Olimpiadas
+
+skinparam classBackgroundColor #E3F2FD
+skinparam classBorderColor #1976D2
+
+abstract class Participante {
+    #{field} nombre: String
+    #{field} pais: String
+    #{field} anoRegistro: int
+    ---
+    +{abstract} obtenerDetalles(): String
+    +validarDatos(): void
+    +getNombre(): String
+    +getPais(): String
+    +getAnoRegistro(): int
+    +setNombre(String): void
+    +setPais(String): void
+    +setAnoRegistro(int): void
+}
+
+class Atleta {
+    -{field} deporte: String
+    -{field} edad: int
+    -{field} altura: double
+    ---
+    +obtenerDetalles(): String
+    +getDeporte(): String
+    +getEdad(): int
+    +getAltura(): double
+}
+
+class Equipo {
+    -{field} nombreEquipo: String
+    -{field} cantidadMiembros: int
+    -{field} deporte: String
+    ---
+    +obtenerDetalles(): String
+    +getNombreEquipo(): String
+    +getCantidadMiembros(): int
+    +getDeporte(): String
+}
+
+class Evento {
+    -{field} nombre: String
+    -{field} disciplina: String
+    -{field} fecha: String
+    -{field} participantes: ArrayList<Participante>
+    ---
+    +Evento(String, String, String)
+    +agregarParticipante(Participante): void
+    +mostrarParticipantes(): void
+    +obtenerDetalles(): String
+}
+
+class Olimpiada {
+    -{field} nombre: String
+    -{field} pais: String
+    -{field} ano: int
+    -{field} eventos: ArrayList<Evento>
+    ---
+    +Olimpiada(String, String, int)
+    +agregarEvento(Evento): void
+    +mostrarEventos(): void
+    +obtenerDetalles(): String
+}
+
+class DatosInvalidosException {
+    +DatosInvalidosException(String)
+}
+
+class Main {
+    -{static} olimpiadas: ArrayList<Olimpiada>
+    -{static} scanner: Scanner
+    ---
+    +{static} main(String[]): void
+    -{static} crearOlimpiada(): void
+    -{static} crearEvento(): void
+    -{static} registrarAtleta(): void
+    -{static} registrarEquipo(): void
+}
+
+Atleta --|> Participante
+Equipo --|> Participante
+Evento "1" o-- "*" Participante
+Olimpiada "1" o-- "*" Evento
+Main --> Olimpiada
+Main --> Evento
+Main --> Atleta
+Main --> Equipo
+Evento ..> DatosInvalidosException
+Olimpiada ..> DatosInvalidosException
+Participante ..> DatosInvalidosException
+
+@enduml
+
