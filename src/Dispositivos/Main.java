@@ -17,14 +17,14 @@ public class Main {
             listaDispositivos.add(laptop1);
             listaDispositivos.add(telefono1);
 
-            // 2. Intento de registro con datos inválidos (Esto lanzará excepción)
-            // Descomenta una de las siguientes líneas para probar el error:
+//             2. Intento de registro con datos inválidos (Esto lanzará excepción)
+//             Descomenta una de las siguientes líneas para probar el error:
             
-            // Caso A: Precio negativo
-            // Laptop laptopError = new Laptop("HP", "Pavilion", -500, 8); 
+//             Caso A: Precio negativo
+//             Laptop laptopError = new Laptop("HP", "Pavilion", -500, 8);
             
-            // Caso B: Marca vacía
-            // Telefono telefonoError = new Telefono("", "iPhone 15", 1200, "iOS");
+//             Caso B: Marca vacía
+             Telefono telefonoError = new Telefono("", "iPhone 15", 1200, "iOS");
         }catch(DatoInvalidoException e){
             System.out.println("Error al registrar: " + e.getMessage());
         }

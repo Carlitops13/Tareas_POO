@@ -1,0 +1,58 @@
+@startuml
+class RegistroJuegos.MarioBros {
+- String personajePrincipal
++ String getPersonajePrincipal()
++ void setPersonajePrincipal(String)
++ void mostrarDetalles()
+}
+
+
+abstract class RegistroJuegos.Juego {
+# String nombre
+# double precio
+# int anioLanzamiento
++ String getNombre()
++ void setNombre(String)
++ double getPrecio()
++ void setPrecio(double)
++ int getAnioLanzamiento()
++ void setAnioLanzamiento(int)
++ {abstract}void mostrarDetalles()
+}
+
+
+class RegistroJuegos.CarreraVehiculos {
+- String tipoVehiculo
++ String getTipoVehiculo()
++ void setTipoVehiculo(String)
++ void mostrarDetalles()
+}
+
+
+class RegistroJuegos.GestorJuegos {
+- ArrayList<Juego> listaJuegos
++ void registrarJuego(Juego)
++ void listarJuegos()
++ void buscarPorNombre(String)
++ void filtrarPorTipo(Class<?>)
+}
+
+
+class RegistroJuegos.ExcepcionJuego {
+}
+class RegistroJuegos.Main {
++ {static} void main(String[])
+- {static} void registrarMario(GestorJuegos,Scanner)
+- {static} void registrarCarrera(GestorJuegos,Scanner)
+- {static} void filtrarJuegos(GestorJuegos,Scanner)
+- {static} int leerInt(Scanner,String)
+- {static} double leerDouble(Scanner,String)
+- {static} String leerTexto(Scanner,String)
+}
+
+
+
+RegistroJuegos.Juego <|-- RegistroJuegos.MarioBros
+RegistroJuegos.Juego <|-- RegistroJuegos.CarreraVehiculos
+RegistroJuegos.Exception <|-- RegistroJuegos.ExcepcionJuego
+@enduml
