@@ -39,7 +39,7 @@ public void registrarJuego (Juego juego){
             }
             
         }
-        if (encontrado) {
+        if (!encontrado) {
             System.out.println("No se encontró ningún juego con el nombre: " + nombre);
 
             
@@ -50,14 +50,14 @@ public void registrarJuego (Juego juego){
         System.out.println("\n---Filtrando por "+ tipo.getSimpleName() + " ---");
         boolean hayResultados= false;
         for (Juego juego : listaJuegos) {
-            if (tipo.isInstance(tipo)) {
+            if (tipo.isInstance(juego)) {
                 juego.mostrarDetalles();
                 hayResultados=true;
                 
             }
             
         }
-        if (hayResultados) {
+        if (!hayResultados) {
             System.out.println("No hay juegos de este tipo");
             
         }
