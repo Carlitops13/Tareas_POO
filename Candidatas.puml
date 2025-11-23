@@ -1,0 +1,91 @@
+00.0+-@startuml
+class Candidatas_Reina_de_Quito.DatoInvalidoException {
++ {static} void validarNombre(String)
++ {static} void validarEdad(int)
++ {static} void validarPuntaje(double)
+}
+
+class Candidatas_Reina_de_Quito.Gestion_Candidatas {
+- List<Candidata> lista
++ void registrar(Candidata)
++ boolean eliminarPorId(int)
++ Candidata buscarporId(int)
++ List<Candidata> listar()
++ List<Candidata> buscarPorNombre(String)
++ List<Candidata> filtrarPorTipo(String)
+}
+
+
+class Candidatas_Reina_de_Quito.CandidataProfesional {
+- String profesion
+- int anosExperiencia
++ void mostrarDetalles()
+}
+
+
+class Candidatas_Reina_de_Quito.Gestion_Votacion {
+- Gestion_Candidatas gestion
+- Map<Integer,Integer> votos
++ void votar(int)
++ Map<Integer,Integer> getConteoVotos()
++ List<Candidata> obtenerGanadoras()
++ void mostrarResultados()
++ void menuVotacion()
+}
+
+
+abstract class Candidatas_Reina_de_Quito.Candidata {
+# int id
+# String nombre
+# int edad
+# String tipo
+# double puntajeJurado
+# String distrito
+- {static} String[] TIPOS_VALIDOS
++ int getId()
++ void setId(int)
++ String getNombre()
++ void setNombre(String)
++ int getEdad()
++ void setEdad(int)
++ String getTipo()
++ void setTipo(String)
++ double getPuntajeJurado()
++ void setPuntajeJurado(double)
++ String getDistrito()
++ void setDistrito(String)
++ void validar()
+- {static} void validarTipo(String)
+- {static} String normalizeTipo(String)
++ String toString()
++ {abstract}void mostrarDetalles()
+}
+
+
+class Candidatas_Reina_de_Quito.Main {
+- Gestion_Candidatas gestion
+- Gestion_Votacion votacion
+- Scanner sc
++ void iniciar()
+- void registrarCandidata()
+- void listarTodas()
+- void buscarPorNombreOid()
+- void filtrar()
+- void menuVotos()
++ {static} void main(String[])
+}
+
+
+class Candidatas_Reina_de_Quito.CandidataEstudiante {
+- String universidad
+- String carrera
++ void mostrarDetalles()
+}
+
+
+
+
+Candidatas_Reina_de_Quito.Exception <|-- Candidatas_Reina_de_Quito.DatoInvalidoException
+Candidatas_Reina_de_Quito.Candidata <|-- Candidatas_Reina_de_Quito.CandidataProfesional
+Candidatas_Reina_de_Quito.Candidata <|-- Candidatas_Reina_de_Quito.CandidataEstudiante
+@enduml
